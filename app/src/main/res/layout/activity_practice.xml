@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:layout_above="@id/rl_practiceContainerActions">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar_scheduleFragment"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#00E4CB"
+            android:gravity="center"
+            app:elevation="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txtView_taskContext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="تمرین"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_16"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imgView_back"
+                    style="@style/rippleStyle"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/margin_8dp"
+                    android:layout_marginLeft="8dp"
+                    android:src="@drawable/ic_back_white" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_percent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/margin_8dp"
+                    android:padding="@dimen/margin_4dp"
+                    android:visibility="gone"
+                    app:cardCornerRadius="@dimen/margin_8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/margin_4dp"
+                        android:paddingRight="@dimen/margin_4dp">
+
+                        <!-- <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center_horizontal"
+                             android:gravity="center_horizontal"
+                             android:text="درصد"
+                             android:textSize="@dimen/font_12" />-->
+
+                        <TextView
+                            android:id="@+id/txtView_percent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="-"
+                            android:textSize="@dimen/font_12" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!--<ImageView
+                    android:id="@+id/imgView_chart"
+                    style="@style/rippleStyle"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/margin_8dp"
+                    android:layout_marginLeft="8dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_chart" />-->
+            </RelativeLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nscroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-10dp"
+            android:background="@drawable/selector_task_container"
+            android:visibility="visible"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+            <RelativeLayout
+                android:id="@+id/rl_practiceContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_task_container1"
+                    android:orientation="horizontal"
+                    android:paddingRight="@dimen/margin_4dp"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/imgView_time"
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:layout_margin="@dimen/margin_16dp"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_time_left"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_8dp"
+                        android:text="@string/str_reading_time_country"
+                        app:layout_constraintBottom_toBottomOf="@+id/imgView_time"
+                        app:layout_constraintRight_toLeftOf="@id/imgView_time"
+                        app:layout_constraintTop_toTopOf="@+id/imgView_time" />
+
+                    <TextView
+                        android:id="@+id/txtView_suggestedTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_16dp"
+                        android:gravity="right"
+                        android:text="یک ساعت و ده دقیقه"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/container1"
+                    android:background="#E3E3E3"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/container2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/selector_bg_1"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/margin_4dp"
+                        android:paddingTop="@dimen/margin_8dp"
+                        android:paddingRight="@dimen/margin_4dp"
+                        android:paddingBottom="@dimen/margin_8dp"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/imgView_bookLib"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_marginRight="16dp"
+                            android:padding="4dp"
+                            android:src="@drawable/ic_book_lib" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="8dp"
+                            android:layout_toLeftOf="@id/imgView_bookLib"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtView_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/font_12"
+                                android:textStyle="bold"
+                                tools:text="مطالعه حسابان 1" />
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/container3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/selector_bg_2"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/margin_4dp"
+                        android:paddingTop="@dimen/margin_8dp"
+                        android:paddingRight="@dimen/margin_4dp"
+                        android:paddingBottom="@dimen/margin_8dp"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/imgView_student"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_marginRight="16dp"
+                            android:src="@drawable/ic_student" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/margin_8dp"
+                            android:layout_toLeftOf="@id/imgView_student"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/str_study_headline"
+                                android:textSize="@dimen/font_12"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtView_studyHeadline"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:layout_toLeftOf="@id/imgView_bookLib"
+                                android:textSize="@dimen/font_12"
+                                tools:text="بخش مشتق و کاربرد برای آزمون گاج جمعه" />
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/container4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/selector_bg_3"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/margin_4dp"
+                        android:paddingTop="@dimen/margin_8dp"
+                        android:paddingRight="@dimen/margin_4dp"
+                        android:paddingBottom="@dimen/margin_8dp"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/imgView_book"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_marginRight="16dp"
+                            android:padding="4dp"
+                            android:src="@drawable/ic_book" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="8dp"
+                            android:layout_toLeftOf="@id/imgView_book"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/str_suggested_book"
+                                android:textSize="@dimen/font_12"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtView_suggestedBook"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:layout_toLeftOf="@id/imgView_bookLib"
+                                android:text="بخش مشتق و کاربرد برای آزمون گاج جمعه"
+                                android:textSize="@dimen/font_12" />
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/container5"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.5"
+                        android:background="@drawable/selector_bg_4"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/margin_4dp"
+                        android:paddingTop="@dimen/margin_8dp"
+                        android:paddingRight="@dimen/margin_4dp"
+                        android:paddingBottom="@dimen/margin_8dp"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/imgView_info"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_marginRight="16dp"
+                            android:padding="4dp"
+                            android:src="@drawable/ic_info" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="8dp"
+                            android:layout_toLeftOf="@id/imgView_info"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/str_descriptions"
+                                android:textSize="@dimen/font_12"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtView_desc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:layout_toLeftOf="@id/imgView_bookLib"
+                                android:text="بخش مشتق و کاربرد برای آزمون گاج جمعه"
+                                android:textSize="@dimen/font_12" />
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:theme="@style/AppBaseTheme.GrayAccent"
+            android:visibility="gone" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_practiceContainerActions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/selector_task_done"
+        android:padding="8dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/imgView_donePractices"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_alignTop="@id/ln_cvContainer"
+            android:layout_alignBottom="@id/ln_cvContainer"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_send"
+            android:visibility="visible" />
+
+
+        <LinearLayout
+            android:id="@+id/ln_cvContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/margin_8dp"
+            android:layout_toRightOf="@id/imgView_donePractices">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_notAnswered"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_4dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/margin_4dp"
+                    android:paddingRight="@dimen/margin_4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="نزده"
+                        android:textSize="@dimen/font_12" />
+
+                    <TextView
+                        android:id="@+id/txtView_notAnswered"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="-" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_correct"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_4dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/margin_4dp"
+                    android:paddingRight="@dimen/margin_4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="صحیح"
+                        android:textSize="@dimen/font_12" />
+
+                    <TextView
+                        android:id="@+id/txtView_correct"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="-" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_wrong"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_4dp"
+                android:layout_weight="1"
+                android:padding="@dimen/margin_4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/margin_4dp"
+                    android:paddingRight="@dimen/margin_4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:text="غلط"
+                        android:textSize="@dimen/font_12" />
+
+                    <TextView
+                        android:id="@+id/txtView_wrong"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="-" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

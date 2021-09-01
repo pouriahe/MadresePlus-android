@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selector_bottom_sheet_dialog_fragment"
+    android:layoutDirection="rtl"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/txtView_tripPrice_bottomSheet"
+        android:layout_width="70dp"
+        android:layout_height="2dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:background="@color/gray"
+        android:textColor="#009063"
+        android:textSize="25sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_8dp">
+
+
+        <TextView
+            android:id="@+id/txtView_distance_bottomSheet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/str_not_registered_desc"
+            android:textColor="@android:color/black" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/user_not_found" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/str_not_registered_desc_call"
+        android:textColor="@android:color/black" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_callToSupport_bottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="@dimen/margin_8dp"
+        android:gravity="center"
+        android:text="تماس با مدرسه پلاس"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/large_font_size"
+        app:backgroundTint="@color/blue"
+        app:cornerRadius="@dimen/margin_4dp" />
+
+</LinearLayout>

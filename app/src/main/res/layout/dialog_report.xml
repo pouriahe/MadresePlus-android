@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/margin_8dp"
+        tools:context=".ui.view.schedule.dailyreport.DailyReportDialog">
+
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_report_title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_report_rating_container"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="@dimen/margin_8dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:layout_marginRight="@dimen/margin_8dp"
+            android:backgroundTint="#F8F8F8"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_title">
+
+            <RadioGroup
+                android:id="@+id/categoryReportRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:animateLayoutChanges="true"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_8dp">
+
+                <RadioButton
+                    android:id="@+id/rd_veryGood"
+                    style="@style/VeryGoodRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="@dimen/margin_8dp"
+                    android:layout_marginRight="@dimen/margin_8dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/selector_very_good" />
+
+                <RadioButton
+                    android:id="@+id/rd_good"
+                    style="@style/VeryGoodRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/selector_good" />
+
+                <RadioButton
+                    android:id="@+id/rd_normal"
+                    style="@style/VeryGoodRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/selector_normal" />
+
+                <RadioButton
+                    android:id="@+id/rd_bad"
+                    style="@style/VeryGoodRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/selector_bad" />
+
+                <RadioButton
+                    android:id="@+id/rd_veryBad"
+                    style="@style/VeryGoodRadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/selector_very_bad" />
+            </RadioGroup>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_report_text_container"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:backgroundTint="#F8F8F8"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_submit"
+            app:layout_constraintLeft_toLeftOf="@id/cv_report_rating_container"
+            app:layout_constraintRight_toRightOf="@id/cv_report_rating_container"
+            app:layout_constraintTop_toBottomOf="@id/cv_report_rating_container">
+
+
+            <EditText
+                android:id="@+id/et_report"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:background="@null"
+                android:gravity="top|right"
+                android:hint="@string/str_report_hint"
+                android:inputType="textMultiLine"
+                android:maxLength="160"
+                android:minLines="5"
+                android:textSize="@dimen/font_14" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|bottom"
+                android:layout_margin="@dimen/margin_4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtView_character_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="/"
+                    android:textColor="@color/gray_600" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="160"
+                    android:textColor="@color/gray_600" />
+            </LinearLayout>
+
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:theme="@style/AppBaseTheme.GrayAccent" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_submit"
+            style="@style/ReportDialogButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:text="@string/str_submit_report"
+            android:textSize="@dimen/font_12"
+            app:layout_anchorGravity="center|top"
+            app:layout_constraintLeft_toLeftOf="@id/cv_report_rating_container"
+            app:layout_constraintRight_toRightOf="@id/cv_report_rating_container"
+            app:layout_constraintTop_toBottomOf="@id/cv_report_text_container" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

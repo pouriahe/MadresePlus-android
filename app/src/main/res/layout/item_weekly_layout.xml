@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_weeklyContainer"
+    style="@style/rippleStyle"
+    android:layout_width="150dp"
+    android:layout_height="95dp"
+    android:layout_margin="@dimen/margin_8dp"
+    app:cardCornerRadius="4dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_weeklyContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/selector_bg_not_done_card"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtView_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@id/imgView_eventType"
+            android:ellipsize="end"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:text="فیزیک 1"
+            android:textSize="@dimen/font_12" />
+
+        <ImageView
+            android:id="@+id/imgView_eventType"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignTop="@id/txtView_title"
+            android:layout_alignBottom="@id/txtView_title"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/margin_4dp"
+            android:src="@drawable/ic_open_book_black" />
+
+        <TextView
+            android:id="@+id/txtView_part"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtView_title"
+            android:ellipsize="end"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:text="اندازه گیری - خطا"
+            android:textSize="@dimen/font_12" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

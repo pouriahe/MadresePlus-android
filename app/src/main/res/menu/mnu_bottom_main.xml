@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_home"
+        android:title="@string/str_home"
+        android:icon="@drawable/ic_house_black_silhouette_without_door"
+        android:tooltipText="@string/str_home"/>
+
+    <item
+        android:id="@+id/item_article"
+        android:title="@string/str_article"
+        android:icon="@drawable/ic_headphones"
+        android:tooltipText="@string/str_article"/>
+
+    <item
+        android:id="@+id/mnu_item_schedule"
+        android:title="@string/str_schedule"
+        android:icon="@drawable/ic_calendar_t"
+        android:tooltipText="@string/str_schedule"/>
+
+<!--    <item-->
+<!--        android:id="@+id/mnu_item_results"-->
+<!--        android:title="@string/str_result"-->
+<!--        android:icon="@drawable/ic_progress_report"-->
+<!--        android:tooltipText="@string/str_result"/>-->
+
+    <item
+        android:id="@+id/mnu_item_messages"
+        android:title="@string/str_messages"
+        android:icon="@drawable/ic_comment"
+        android:tooltipText="@string/str_messages"/>
+
+
+</menu>

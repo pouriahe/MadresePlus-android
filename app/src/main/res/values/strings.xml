@@ -1,0 +1,121 @@
+<resources>
+    <string name="app_name">MadresePlus</string>
+    <string name="app_name_fa">مدرسه پلاس</string>
+
+    <string name="str_home">خانه</string>
+    <string name="str_hint_login">ورود</string>
+    <string name="str_hint_pass">رمز عبور</string>
+    <string name="str_article">مجله</string>
+    <string name="str_schedule">برنامه</string>
+    <string name="str_result">کارسنج</string>
+    <string name="str_messages">پیام ها</string>
+    <string name="str_yes">بله</string>
+    <string name="str_no">خیر</string>
+    <string name="str_submit">ثبت</string>
+    <string name="str_login">ورود به مدرسه پلاس</string>
+    <string name="str_enter_number">لطفا شماره موبایل خود را وارد کنید</string>
+    <string name="str_password">password</string>
+    <string name="str_checkTel">بررسی شماره موبایل</string>
+    <string name="str_login_to_mp">ورود به مدرسه پلاس</string>
+    <string name="str_lastActs">آخرین فعالیت های من</string>
+    <string name="str_not_registered_desc">به نظر میاد هنوز عضو مدرسه پلاس نشدی!!!</string>
+    <string name="str_not_registered_desc_call">برای کسب اطلاعات بیشتر و ثبت نام با مدرسه پلاس تماس بگیرید</string>
+    <string name="str_call_to_support">آیا مایل هستید با پشتیبانی تماس بگیرید؟</string>
+    <string name="tel_support">tel:+982122896740</string>
+    <string name="contentDesc">image</string>
+    <string name="task_string">هنوز هیچی از برنامه رو انجام ندادی!!!</string>
+    <string name="content_string_tab">مطالب</string>
+    <string name="podcast_string_tab">پادکست</string>
+    <string name="daily_view_string_tab">نمای روز</string>
+    <string name="weekly_view_string_tab">نمای هفته</string>
+    <string name="str_reading_time_country">زمان متوسط مطالعه در کشور</string>
+    <string name="str_study_headline">سرفصل مطالعه</string>
+    <string name="str_suggested_book">کتاب پیشنهادی</string>
+    <string name="str_descriptions">توضیحات:</string>
+    <string name="rest_error">خطا در برقراری ارتباط با سرور</string>
+    <string name="str_done_it">انجامش دادی؟</string>
+    <string name="str_not_fill">نزده</string>
+    <string name="str_fill_inputs">تعداد را وارد کنید</string>
+    <string name="str_done">انجام شده</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+    <string name="retry_network">تلاش مجدد</string>
+    <string name="str_no_plan">در این روز برنامه ای نداری!</string>
+    <string name="tel_counselor">tel:+989332182737</string>
+    <string name="usage_guide">راهنمای استفاده</string>
+    <string name="about_mp_plus">درباره مدرسه پلاس</string>
+    <string name="call_to_support">تماس با پشتیبانی</string>
+    <string name="call_to_support_unit">تماس با واحد پشتیبانی</string>
+    <string name="call_to_consulting_unit">تماس با واحد مشاوره</string>
+    <string name="str_support_desc">در صورت داشتن هر گونه سوال در مورد اپلیکیشن و نحوه کار با آن یا گزارش هر گونه مشکل یا انتقاد و پیشنهاد با شماره زیر تماس بگیرید.</string>
+    <string name="str_counselor_desc">در صورت داشتن هر گونه سوال در مورد طرح های مشاوره و برنامه ریزی و ثبت نام با شماره زیر تماس بگیرید.</string>
+    <string name="counsellor">counsellor</string>
+    <string name="support">support</string>
+    <string name="str_hint_confirm_code">کد تایید</string>
+    <string name="wrong_phone_number">شماره وارد شده صحیح نیست</string>
+    <string name="resendCode">ارسال مجدد</string>
+    <string name="submit">ثبت</string>
+    <string name="enter_confirm_code">لطفا کد تایید را به درستی وارد کنید</string>
+    <string name="str_first_name">نام</string>
+    <string name="str_last_name">نام خانوادگی</string>
+    <string name="str_gender">جنسیت</string>
+    <string name="str_province">استان</string>
+    <string name="str_city">شهر</string>
+    <string name="str_next_step">مرحله بعد</string>
+    <string name="str_major">رشته</string>
+    <string name="str_grade">پایه تحصیلی</string>
+    <string name="str_repeat_pas">تکرار رمز عبور</string>
+    <string name="str_lets_go">بزن بریم</string>
+    <string name="str_define_pass">تعیین کلمه عبور</string>
+    <string name="str_prev_step">مرحله قبل</string>
+    <string name="str_educational_info">اطلاعات تحصیلی</string>
+    <string name="str_men">مرد</string>
+    <string name="str_female">زن</string>
+    <string name="str_choose">انتخاب</string>
+    <string name="str_report_title">امروز چقدر از خودت راضی بودی؟</string>
+    <string name="str_submit_report">گزارشم رو ثبت کن</string>
+    <string name="str_report_hint">گزارش روزانه خود را ثبت کنید</string>
+    <string name="str_daily_report_submit_seccesfully">گزارش روزانه با موفقیت ثبت شد</string>
+    <string name="str_my_messages">پیام های من</string>
+    <string name="str_in_process">در حال بررسی</string>
+    <string name="str_hint_description">توضیحات</string>
+    <string name="str_hint_write_descriptions">توضیحات خود را در این قسمت بنویسید</string>
+    <string name="str_submit_message">ثبت پیام</string>
+    <string name="str_subject">موضوع</string>
+    <string name="str_priority">اولویت</string>
+    <string name="str_invitation_code">کد معرف</string>
+    <string name="str_registration_test">آزمون آزمایشی ثبت نامی</string>
+
+
+    <string-array name="dialog_gender_array">
+        <item>مرد</item>
+        <item>زن</item>
+    </string-array>
+
+    <string-array name="major_array">
+        <item>ریاضی</item>
+        <item>تجربی</item>
+        <item>انسانی</item>
+    </string-array>
+
+    <string-array name="grage_array">
+        <item>دهم</item>
+        <item>یازدهم</item>
+        <item>دوازدهم</item>
+        <item>فارغ‌التحصیل</item>
+    </string-array>
+
+    <string-array name="registration_test">
+        <item>قلمچی</item>
+        <item>گزینه دو</item>
+        <item>سنجش</item>
+        <item>گاج</item>
+        <item>سایر</item>
+        <item>آزمونی شرکت نمیکنم</item>
+    </string-array>
+
+
+</resources>

@@ -1,0 +1,109 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    defaultConfig {
+        applicationId "ir.madreseplus"
+        minSdkVersion 17
+        targetSdkVersion 29
+        versionCode 8
+        versionName "1.1.4"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+    viewBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        deubg {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    def lifecycle_version = "2.1.0"
+    def room_version = "2.2.3"
+    def rx_android = "2.1.1"
+    def rxjava2 = "2.2.16"
+
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+
+    //material
+    implementation 'com.google.android.material:material:1.1.0'
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.7.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.7.1'
+    implementation ("com.squareup.okhttp3:okhttp:3.12.12"){
+        force = true //API 19 support
+    }
+    implementation "com.squareup.okhttp3:okhttp-urlconnection:4.4.0"
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.12'
+
+
+    // BaseViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+
+    //room
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-rxjava2:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    // RxJava
+    implementation "io.reactivex.rxjava2:rxandroid:$rx_android"
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava2"
+
+    //persian date
+    implementation 'com.github.samanzamani.persiandate:PersianDate:0.8'
+
+    //Toasty
+    implementation 'com.github.GrenderG:Toasty:1.4.2'
+
+    //Hawk
+    implementation "com.orhanobut:hawk:2.0.1"
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
+    //picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    implementation 'com.android.support:multidex:1.0.3'
+
+    //time picker
+    implementation 'com.mohamadamin:persianmaterialdatetimepicker:1.2.1'
+    implementation 'org.jetbrains:annotations:15.0'
+
+
+}

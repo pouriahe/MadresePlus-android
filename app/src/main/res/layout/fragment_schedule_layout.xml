@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_scheduleFragment"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="#00E4CB"
+        app:elevation="0dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_16dp"
+            app:cardCornerRadius="8dp">
+
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout_scheduleFragment"
+                style="@style/scheduleTabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layoutDirection="ltr"
+                app:tabIndicatorHeight="0dp"
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextColor="#000" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txtView_date_scheduleFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_16dp"
+            tools:text="چهارشنبه 7 اسفند 98" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ln_container_schedule_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-20dp"
+        android:background="@drawable/selector_article_container"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager_scheduleFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_chooseDate_scheduleFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue_bg"
+        android:text="انتخاب تاریخ"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_12"
+        app:cornerRadius="@dimen/margin_24dp"
+        app:elevation="@dimen/margin_16dp"
+        app:layout_anchor="@id/ln_container_schedule_fragment"
+        app:layout_anchorGravity="center|top" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_report"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|left"
+        android:layout_margin="@dimen/margin_16dp"
+        android:backgroundTint="@color/blue"
+        app:tint="@color/white"
+        android:src="@drawable/ic_calendar" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
